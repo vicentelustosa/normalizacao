@@ -1,0 +1,7 @@
+run = "node .config/validate.js"
+entrypoint = "data.xml"
+
+hidden = [".config"]
+
+[nix]
+channel = "stable-22_05"

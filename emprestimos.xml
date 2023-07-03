@@ -1,0 +1,36 @@
+<Database>
+  <Table name="Empréstimos">
+    <Columns>
+      <Column name="Empréstimo_ID" identifier="true" />
+      <Column name="Livro_ID" identifier="true" />
+      <Column name="Exemplar_No" identifier="true" />
+      <Column name="Data_Empréstimo" />
+      <Column name="Data_Devolução" />
+      <ForeignKey columns="(Livro_ID, Exemplar_No)" references="Exemplares(Livro_ID, Exemplar_No)" />
+    </Columns>
+  </Table>
+  
+  <Table name="Livros">
+    <Columns>
+      <Column name="Livro_ID" identifier="true" />
+      <Column name="Livro_Título" />
+      <Column name="Autor_ID" foreignKey="Autores(Autor_ID)" />
+    </Columns>
+  </Table>
+
+    <Table name="Exemplares">
+    <Columns>
+      <Column name="Livro_ID" identifier="true" foreignKey="Livro(Livro_ID)"/>
+      <Column name="Exemplar_No" identifier="true" />
+      <Column name="Qt_reservada" />
+      <Column name="Qt_disponivel" />
+    </Columns>
+  </Table>
+  
+  <Table name="Autores">
+    <Columns>
+      <Column name="Autor_ID" identifier="true" />
+      <Column name="Autor" />
+    </Columns>
+  </Table>
+</Database>

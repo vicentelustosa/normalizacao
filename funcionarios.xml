@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Database>
+  <Table name="Funcionários">
+    <Columns>
+      <Column name="Funcionário_ID" identifier="true" />
+      <Column name="Nome_Funcionário" />
+      <Column name="Departamento_ID" foreignKey="Departamentos(Departamento_ID)" />
+      <Column name="Gerente_ID" foreignKey="Funcionários(Funcionário_ID)" />
+    </Columns>
+  </Table>
+  
+  <Table name="Departamentos">
+    <Columns>
+      <Column name="Departamento_ID" identifier="true" />
+      <Column name="Departamento" />
+    </Columns>
+  </Table>
+</Database>

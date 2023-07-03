@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Database>
+  <Table name="Clientes">
+    <Columns>
+      <Column name="Cliente_ID" primaryKey="true" />
+      <Column name="Cliente" />
+    </Columns>
+  </Table>
+  
+  <Table name="Vendas">
+    <Columns>
+      <Column name="Venda_ID" identifier="true" />
+      <Column name="Cliente_ID" foreignKey="Clientes(Cliente_ID)" />
+    </Columns>
+  </Table>
+  
+  <Table name="Produtos">
+    <Columns>
+      <Column name="Produto_ID" identifier="true" />
+      <Column name="Produto" />
+      <Column name="Estoque" />
+    </Columns>
+  </Table>
+  
+  <Table name="Itens_Venda">
+    <Columns>
+      <Column name="Item_No" identifier="true" />
+      <Column name="Venda_ID" foreignKey="Vendas(Venda_ID)" />
+      <Column name="Produto_ID" foreignKey="Produtos(Produto_ID)" />
+      <Column name="Quantidade" />
+      <Column name="Preco_Unitario" />
+      <Column name="Total" />
+    </Columns>
+  </Table>
+</Database>
+
+</Table>
+
+<Table name="Produtos">
+  <Columns>
+    <Column name="Produto_ID" identifier="true" />
+    <Column name="Produto" />
+    <Column name="Estoque" />
+  </Columns>
+</Table>
+
+<Table name="Itens_Venda">
+  <Columns>
+    <Column name="Item_No" identifier="true" />
+    <Column name="Venda_ID" foreignKey="Vendas.Venda_ID" />
+    <Column name="Produto_ID" foreignKey="Produtos.Produto_ID" />
+    <Column name="Quantidade" />
+    <Column name="Preco_Unitario" />
+    <Column name="Total" />
+  </Columns>
+</Table>
+
